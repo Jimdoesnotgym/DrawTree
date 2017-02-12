@@ -44,7 +44,7 @@ public class Node {
     public static boolean constraintGood(Node root, int level){
         if(checkAConstraint(root) && checkBConstraint(root) && checkCConstraint(root) &&
                 checkDConstraint(root) && checkEConstraint(root) && checkFConstraint(root) &&
-                checkGConstraint(root) && checkHConstraint(root)){
+                checkGConstraint(root) /*&& checkHConstraint(root)*/){
             return true;
         }
         return false;
@@ -132,8 +132,8 @@ public class Node {
         return true;
     }
 
-    public static boolean checkHConstraint(Node node){
+    /*public static boolean checkHConstraint(Node node){
         return false;
-    }
+    }*/
 
 }
