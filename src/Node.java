@@ -1,11 +1,12 @@
 import java.util.Map;
 
 public class Node {
-    Map<String, Integer> map;
-    Node first;
-    Node second;
-    Node third;
-    Node fourth;
+    public Map<String, Integer> map;
+    public Node first;
+    public Node second;
+    public Node third;
+    public Node fourth;
+    public final int[] possibleValues = {1, 2, 3, 4};
 
     public Node(Map map){
         this.map = map;
@@ -15,6 +16,7 @@ public class Node {
         fourth = null;
     }
 
+    //Getters
     public int getA(){
         return this.map.get("A");
     }
@@ -33,18 +35,41 @@ public class Node {
     public int getF(){
         return this.map.get("F");
     }
-    public int getG(){
-        return this.map.get("G");
-    }
+    public int getG() { return this.map.get("G"); }
     public int getH(){
         return this.map.get("H");
     }
 
+    //Setters
+    public void setA(int i){
+        this.map.put("A", i);
+    }
+    public void setB(int i){
+        this.map.put("B", i);
+    }
+    public void setC(int i){
+        this.map.put("C", i);
+    }
+    public void setD(int i){
+        this.map.put("D", i);
+    }
+    public void setE(int i){
+        this.map.put("E", i);
+    }
+    public void setF(int i){
+        this.map.put("F", i);
+    }
+    public void setG(int i){
+        this.map.put("G", i);
+    }
+    public void setH(int i){
+        this.map.put("H", i);
+    }
 
-    public static boolean constraintGood(Node root, int level){
-        if(checkAConstraint(root) && checkBConstraint(root) && checkCConstraint(root) &&
-                checkDConstraint(root) && checkEConstraint(root) && checkFConstraint(root) &&
-                checkGConstraint(root) /*&& checkHConstraint(root)*/){
+    public boolean constraintGood(){
+        if(checkAConstraint(this) && checkBConstraint(this) && checkCConstraint(this) &&
+                checkDConstraint(this) && checkEConstraint(this) && checkFConstraint(this) &&
+                checkGConstraint(this) /*&& checkHConstraint(root)*/){
             return true;
         }
         return false;
