@@ -10,10 +10,10 @@ public class Node {
 
     public Node(Map map){
         this.map = map;
-        first = null;
-        second = null;
-        third = null;
-        fourth = null;
+        first = new Node(this.map);
+        second = new Node(this.map);
+        third = new Node(this.map);
+        fourth = new Node(this.map);
     }
 
     //Getters
@@ -73,6 +73,12 @@ public class Node {
             return true;
         }
         return false;
+    }
+
+    public void endPrint(StringBuilder builder){
+        builder.append("false");
+        String output = builder.toString();
+        System.out.println(output);
     }
 
 
